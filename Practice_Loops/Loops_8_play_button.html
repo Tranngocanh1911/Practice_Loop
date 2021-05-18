@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game: Hãy thử đoán xem</title>
+</head>
+<body>
+<input onclick="playgame()" type="button" value="Play" name="Play">
+<script>
+    let min = +prompt("Enter first number: ");
+    let max = +prompt("Enter last number: ");
+    let random = Math.floor(Math.random() * (max - min)) + min;
+    console.log(random);
+    let count = 0
+    function playgame() {
+        let n = +prompt("Enter a number: ");
+        if (n == random) {
+            alert('you win');
+        }
+        while (count < 3) {
+            if (n < random) {
+                alert('This number is smaller!');
+                count++
+                return;
+            } else if (n > random) {
+                alert('This number is bigger!');
+                count++
+                return;
+            }
+
+
+        }
+
+    }
+
+</script>
+</body>
+</html>
